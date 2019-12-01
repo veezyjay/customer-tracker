@@ -36,6 +36,10 @@ public class CRMLoggingAspect {
 		myLogger.info("====>>> in @Before - calling method: " + theMethod);
 		
 		// display the arguments to the method
+		Object[] args = theJoinPoint.getArgs();
+		for (Object tempArg : args) {
+			myLogger.info("====>>> argument: " + tempArg);
+		}
 	}
 	
 	// add @AferReturning advice
